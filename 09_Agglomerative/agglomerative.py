@@ -55,9 +55,3 @@ plot_dendrogram(data, 'single')
 # Plot the dendrogram using complete-linkage
 plot_dendrogram(data, 'complete')
 
-# Example of true and predicted labels
-true_labels = np.array([0, 0, 1, 1, 2, 2])
-predicted_labels = np.array([0, 0, 1, 2, 2, 2])
-
-# Plot the confusion matrix
-plot_confusion_matrix(true_labels, predicted_labels)
