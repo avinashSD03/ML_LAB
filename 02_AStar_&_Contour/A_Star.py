@@ -19,15 +19,20 @@ def a_star_algorithm(graph, start, goal):
         # If node is goal then construct the path and return
         if n == goal:
             reconst_path = []
+            path_cost=0
 
             while parents[n] != n:
                 reconst_path.append(n)
+                for node,cost in graph[parents[n]]:
+                    if node == n:
+                        path_cost+=cost
+                        break
                 n = parents[n]
 
             reconst_path.append(start)
             reconst_path.reverse()
 
-            print(f'Path found: {reconst_path}')
+            print(f'Path found: {reconst_path} with cost: {path_cost}')
             return reconst_path
 
         for (m, weight) in graph[n]:
@@ -58,9 +63,9 @@ def a_star_algorithm(graph, start, goal):
 
 graph = {
     'S': [('A', 1), ('G', 10)],
-    'A': [('B', 2), ('C', 1)],
+    'A': [('B', 2), ('C', 2)],
     'B': [('D', 5)],
-    'C': [('D', 3),('G', 4)],
+    'C': [('D', 3),('G', 5)],
     'D': [('G', 2)]
 }
 
