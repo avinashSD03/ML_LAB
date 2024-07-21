@@ -25,15 +25,6 @@ def plot_dendrogram(data, method):
     plt.ylabel('Distance')
     plt.show()
 
-def plot_confusion_matrix(true_labels, predicted_labels):
-    cm = confusion_matrix(true_labels, predicted_labels)
-    plt.figure(figsize=(6, 6))
-    sns.heatmap(cm, annot=True, cmap='Blues', fmt='d')
-    plt.xlabel('Predicted Class')
-    plt.ylabel('True Class')
-    plt.title('Confusion Matrix')
-    plt.show()
-
 def plot_correlation_matrix(data):
     correlation_matrix = np.corrcoef(data.T)
     plt.figure(figsize=(6, 6))
